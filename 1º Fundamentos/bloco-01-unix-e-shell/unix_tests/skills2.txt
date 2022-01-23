@@ -1,0 +1,8 @@
+Internet
+Unix
+Bash
+Amarelo
+Preto
+Branco
+Laranja
+Roxo
