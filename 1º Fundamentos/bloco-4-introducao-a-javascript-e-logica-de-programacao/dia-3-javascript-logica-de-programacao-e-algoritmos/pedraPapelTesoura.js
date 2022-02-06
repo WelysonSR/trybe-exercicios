@@ -1,8 +1,5 @@
-// let jogador1 = Math.floor(Math.random() * 3) + 1;
-// let jogador2 = Math.floor(Math.random() * 3) + 1;
-
-let jogador1 = 2;
-let jogador2 = 3;
+let jogador1 = Math.floor(Math.random() * 3) + 1;
+let jogador2 = Math.floor(Math.random() * 3) + 1;
 
 switch (jogador1) {
     case 1:
