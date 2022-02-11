@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+        section {
+            border-color: black;
+            border-style: solid;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .main-content {
+            background-color: yellow;
+        }
+
+        .main-content .center-content {
+            background-color: red;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-content .center-content p {
+            font-style: italic;
+        }
+
+        .main-content .left-content {
+            background-color: green;
+            width: 60%;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .main-content .left-content .small-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 100%;
+        }
+
+        .main-content .right-content {
+            background-color: blue;
+            width: 60%;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .main-content .description {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
+        let body = document.getElementsByTagName("body")[0];
+        let tagH1 = document.createElement("h1");
+        tagH1.innerText = "Exercício 5.2 - JavaScript DOM";
+        body.appendChild(tagH1);
+
+        // Adicione a tag main com a classe main-content como filho da tag body ;
+        let main = document.createElement("main");
+        body.appendChild(main).className = "main-content";
+
+        // Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;
+        let section = document.createElement("section");
+        main.appendChild(section).className = "center-content";
+
+        // Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
+        let tagP = document.createElement("p");
+        tagP.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin neque nec risus consequat lacinia. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla pellentesque condimentum facilisis. Etiam venenatis, arcu eu porta commodo, nisi justo luctus mi, nec aliquet lorem massa non nulla. "
+        section.appendChild(tagP);
+
+        // Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
+        let section1 = document.createElement("section");
+        main.appendChild(section1).className = "left-content small-image";
+
+        // Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;
+        let section2 = document.createElement("section");
+        main.appendChild(section2).className = "right-content";
+
+        // Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do section criado no passo 5;
+        let img = document.createElement("img");
+        section1.appendChild(img).src = "https://picsum.photos/200";
+
+        // Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+        let umAteDez = ["Um", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove", "Dez"];
+        let ul = document.createElement("ul");
+        section2.appendChild(ul);
+
+        function createElement(newPosition) {
+            let element = document.createElement("li");
+            element.innerText = newPosition;
+            return element;
+        }
+        function addElement(parent, child) {
+            parent.appendChild(child)
+        }
+        
+        for (const unidade of umAteDez) {
+            let element = createElement(unidade);
+            addElement(ul, element);
+        }
+
+    </script>
+</body>
+
+</html>
