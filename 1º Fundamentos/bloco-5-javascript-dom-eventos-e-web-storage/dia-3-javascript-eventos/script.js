@@ -114,3 +114,12 @@ function zoomPositive(event) {
 function zoomNegative(event) {
     event.target = event.target.style.fontSize = "20px";
 }
+
+let myTasks = document.querySelector(".my-tasks");
+
+function customTrick(trick){
+    let span = document.createElement("span")
+    span.innerText = trick;
+    myTasks.appendChild(span);    
+}
+customTrick("cozinhar")
