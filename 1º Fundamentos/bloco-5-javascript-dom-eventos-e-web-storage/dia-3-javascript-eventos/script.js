@@ -123,3 +123,11 @@ function customTrick(trick){
     myTasks.appendChild(span);    
 }
 customTrick("cozinhar")
+
+function subtitleColor(color) {
+    let div = document.createElement("div");
+    div.className = "task";
+    div.style.backgroundColor = color;
+    myTasks.appendChild(div);
+}
+subtitleColor("White");
