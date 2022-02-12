@@ -117,10 +117,10 @@ function zoomNegative(event) {
 
 let myTasks = document.querySelector(".my-tasks");
 
-function customTrick(trick){
+function customTrick(trick) {
     let span = document.createElement("span")
     span.innerText = trick;
-    myTasks.appendChild(span);    
+    myTasks.appendChild(span);
 }
 customTrick("cozinhar")
 
@@ -130,4 +130,18 @@ function subtitleColor(color) {
     div.style.backgroundColor = color;
     myTasks.appendChild(div);
 }
-subtitleColor("White");
+subtitleColor("blue");
+
+let divClasse = document.querySelector(".task");
+divClasse.addEventListener("click", swapClasse);
+
+function swapClasse() {
+    if (divClasse.className === "task") {
+        divClasse.className = "task selected";
+        console.log(divClasse.className);
+    }else{
+        divClasse.className = "task";
+        console.log(divClasse.className);
+    }
+}
+swapClasse()
