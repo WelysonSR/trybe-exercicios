@@ -46,11 +46,27 @@ for (const day of dezDaysList) {
     }
 }
 
-function holiday(){
+function holiday(buttonName) {
     let button = document.createElement('button');
-    button.innerText = "Feriado";
+    button.innerText = buttonName;
     button.id = "btn-holiday";
     buttons.appendChild(button);
 }
-holiday();
+holiday("Feriado");
 
+
+let click = document.querySelector("#btn-holiday");
+click.addEventListener("click", backgroundColo);
+let itens = document.querySelectorAll(".holiday");
+let holidayColo1 = "white";
+let holidayColo2 = "rgb(238,238,238)";
+
+function backgroundColo() {
+    for (let i = 0; i < itens.length; i += 1) {
+        if (itens[i].style.backgroundColor === holidayColo1) {
+            itens[i].style.backgroundColor = holidayColo2;
+        } else {
+            itens[i].style.backgroundColor = holidayColo1;
+        }
+    }
+}
