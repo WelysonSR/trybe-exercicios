@@ -34,10 +34,13 @@ function addElement(parent, element) {
 }
 
 for (const day of dezDaysList) {
-    if (day === 24 || day === 25 || day === 31) {
+    if (day === 25) {
+        let tag = createElementTag("li", day, "day holiday friday");
+        addElement(mesDay, tag);
+    } else if (day === 24 || day === 31) {
         let tag = createElementTag("li", day, "day holiday");
         addElement(mesDay, tag);
-    } else if (day === 4 || day === 11 || day === 18 || day === 25) {
+    } else if (day === 4 || day === 11 || day === 18) {
         let tag = createElementTag("li", day, "day friday");
         addElement(mesDay, tag);
     } else {
@@ -54,19 +57,43 @@ function holiday(buttonName) {
 }
 holiday("Feriado");
 
-
-let click = document.querySelector("#btn-holiday");
-click.addEventListener("click", backgroundColo);
+let click1 = document.querySelector("#btn-holiday");
+click1.addEventListener("click", backgroundColo);
 let itens = document.querySelectorAll(".holiday");
-let holidayColo1 = "white";
-let holidayColo2 = "rgb(238,238,238)";
+let holidayColor1 = "white";
+let holidayColor2 = "rgb(238,238,238)";
 
 function backgroundColo() {
     for (let i = 0; i < itens.length; i += 1) {
-        if (itens[i].style.backgroundColor === holidayColo1) {
-            itens[i].style.backgroundColor = holidayColo2;
+        if (itens[i].style.backgroundColor === holidayColor1) {
+            itens[i].style.backgroundColor = holidayColor2;
         } else {
-            itens[i].style.backgroundColor = holidayColo1;
+            itens[i].style.backgroundColor = holidayColor1;
+        }
+    }
+}
+
+function fridays(day) {
+    let button = document.createElement("button");
+    button.innerText = day;
+    button.id = "btn-friday";
+    buttons.appendChild(button);
+}
+fridays("Sexta-feira");
+
+let click2 = document.querySelector("#btn-friday");
+click2.addEventListener("click", fridayDay);
+let daysFriday = document.querySelectorAll(".friday");
+let friday1 = "Sextou!";
+let friday2 = [];
+
+function fridayDay() {
+    for (let i = 0; i < daysFriday.length; i += 1) {
+        if (daysFriday[i].innerText !== friday1) {
+            friday2.push(daysFriday[i].innerText);
+            daysFriday[i].innerText = friday1;
+        } else {
+            daysFriday[i].innerText = friday2[i];
         }
     }
 }
