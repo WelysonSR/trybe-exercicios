@@ -20,8 +20,6 @@ const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 
 let mesDay = document.querySelector("#days");
 let buttons = document.querySelector(".buttons-container");
 
-
-
 function createElementTag(element, tagContent, classe) {
     let tagElement = document.createElement(element);
     tagElement.innerText = tagContent;
@@ -96,4 +94,23 @@ function fridayDay() {
             daysFriday[i].innerText = friday2[i];
         }
     }
+}
+
+function pisitionLi() {
+    let liPositio = document.querySelectorAll(".day");
+    let positin = [];
+    for (let i = 0; i < liPositio.length; i += 1) {
+        positin = liPositio[i].addEventListener("mouseover", zoomPositive);
+        positin = liPositio[i].addEventListener("mouseout", zoomNegative);
+    }
+    return positin;
+}
+
+pisitionLi()
+function zoomPositive(event) {
+    event.target = event.target.style.fontSize = "30px";
+}
+
+function zoomNegative(event) {
+    event.target = event.target.style.fontSize = "20px";
 }
