@@ -24,7 +24,7 @@ article {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 h2 {
@@ -62,7 +62,7 @@ figcaption {
 
   section {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: center;
   }
   img {
