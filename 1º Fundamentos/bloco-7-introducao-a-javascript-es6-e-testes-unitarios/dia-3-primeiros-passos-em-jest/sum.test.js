@@ -1,13 +1,21 @@
-const sum = require('./sum');
+const { sum, myRemove } = require('./sum');
 
-test('adds 4 + 5 to equal 9', () => {
-    expect(sum(4, 5)).toBe(9);
+describe('functio sum', () => {
+    it('deve retornar o resultado da soma', () => {
+        expect(sum(4, 5)).toBe(9);
+        expect(sum(0, 0)).toBe(0);
+    });
+
+    it('deve disparar um erro caso receba como parâmetro uma string', () => {
+        expect(() => sum(4, "5")).toThrow();
+        expect(() => sum(4, "5")).toThrow("parameters must be numbers");
+    });
 });
 
-test('adds 0 + 0 to equal 0', () => {
-    expect(sum(0, 0)).toBe(0);
-});
-
-test('adds 4 + "5" to equal string 5', () => {
-    expect(() => { sum(4, "5") }).toThrow("parameters must be numbers");
+describe('function myRemove', () => {
+    it('deve retornar um array removendo o item correto', () => {
+        expect(myRemove([1, 2, 3, 4], 3)).toEqual([1, 2, 4]);
+        expect(myRemove([1, 2, 3, 4], 3)).not.toEqual([1, 2, 3, 4]);
+        expect(myRemove([1, 2, 3, 4], 5)).toEqual([1, 2, 3, 4]);
+    });
 });
