@@ -1,0 +1,18 @@
+.header {
+  text-align: center;
+  font-size: 50px;
+}
+
+.conteiner {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.constent {
+  background-color: aqua;
+}
+
+.footer {
+  text-align: center;
+}
