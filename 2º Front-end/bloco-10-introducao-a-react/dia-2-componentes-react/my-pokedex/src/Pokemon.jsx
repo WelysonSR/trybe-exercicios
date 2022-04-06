@@ -22,6 +22,7 @@ Pokemon.propTypes = {
   name: PropTypes.string,
   type: PropTypes.string,
   averageWeight: PropTypes.object,
+  image: PropTypes.string,
 };
 
 export default Pokemon;

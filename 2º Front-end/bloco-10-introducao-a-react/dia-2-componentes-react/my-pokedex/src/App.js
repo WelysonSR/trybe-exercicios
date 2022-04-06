@@ -13,7 +13,7 @@ class App extends React.Component {
         </div>
         <section className='conteiner'>
           {
-            data.map((item)=> <Pokemon key={item.id} name={item.name} type={item.type} averageWeight={item.averageWeight} image={item.image} />)
+            data.map(({ id, name, type, averageWeight, image }) => <Pokemon key={id} name={name} type={type} averageWeight={averageWeight} image={image} />)
           }
         </section>
       </section>
